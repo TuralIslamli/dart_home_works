@@ -2,9 +2,27 @@ import 'dart:io';
 
 Map<int, String> loginOrGuest = {1: 'login', 2: 'guest'};
 List<Map<String, dynamic>> products = [
-  {'model': 'Samsung A53', 'price': 830},
-  {'model': 'iPhone 11', 'price': 1400},
-  {'model': 'Xiaomi 13', 'price': 1900}
+  {
+    'model': 'Samsung A53',
+    'memory': '128gb',
+    'ram': '6gb',
+    "OS": "Android",
+    'price': 830
+  },
+  {
+    'model': 'iPhone 11',
+    'memory': '128gb',
+    'ram': '4gb',
+    'OS': 'IOS',
+    'price': 1400
+  },
+  {
+    'model': 'Xiaomi 13',
+    'memory': '256gb',
+    'ram': '8gb',
+    'OS': 'Android',
+    'price': 1900
+  }
 ];
 
 Map<String, Map<dynamic, dynamic>> creditMethods = {
@@ -41,7 +59,7 @@ main() {
     userSelect = int.tryParse(stdin.readLineSync().toString());
 
     if (loginOrGuest[userSelect] == 'login') {
-      while (userName.trim().length == 0) {
+      while (userName.isEmpty || userName.contains(' ')) {
         stdout.writeln("Please enter user name. User name cant be emty ");
         userName = stdin.readLineSync().toString();
       }
