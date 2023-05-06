@@ -2,27 +2,9 @@ import 'dart:io';
 
 Map<int, String> loginOrGuest = {1: 'login', 2: 'guest'};
 List<Map<String, dynamic>> products = [
-  {
-    'model': 'Samsung A53',
-    'memory': '128gb',
-    'ram': '6gb',
-    "OS": "Android",
-    'price': 830
-  },
-  {
-    'model': 'iPhone 11',
-    'memory': '128gb',
-    'ram': '4gb',
-    'OS': 'IOS',
-    'price': 1400
-  },
-  {
-    'model': 'Xiaomi 13',
-    'memory': '256gb',
-    'ram': '8gb',
-    'OS': 'Android',
-    'price': 1900
-  }
+  {'model': 'Samsung A53', 'price': 830},
+  {'model': 'iPhone 11', 'price': 1400},
+  {'model': 'Xiaomi 13', 'price': 1900}
 ];
 
 Map<String, Map<dynamic, dynamic>> creditMethods = {
@@ -114,9 +96,6 @@ main() {
           stdout.writeln(
               "$key has ${Map.from(value["loans"]).keys} loans. \nEnter how many months you want to split");
           int selectedLoans = int.parse(stdin.readLineSync().toString());
-          print(value['loans'][selectedLoans]);
-          print(888888);
-          print(value['loans'][selectedLoans] != Null);
           if (value['loans'][selectedLoans] != Null) {
             switch (value['comission']) {
               case 'percent':
