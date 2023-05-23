@@ -6,9 +6,9 @@ void main() {
 
 Map<String, int> productsGenerator(List<String> list) {
   Map<String, int> products = {};
-  for (var element in list) {
+  for (String element in list) {
     String productName = element.toUpperCase();
-    products.keys.contains(productName)
+    products.containsKey(productName)
         ? products[productName] = products[productName]! + 1
         : products[productName] = 1;
   }
