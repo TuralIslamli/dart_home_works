@@ -8,9 +8,7 @@ Map<String, int> productsGenerator(List<String> list) {
   Map<String, int> products = {};
   for (String element in list) {
     String productName = element.toUpperCase();
-    products.containsKey(productName)
-        ? products[productName] = products[productName]! + 1
-        : products[productName] = 1;
+    products[productName] = (products[productName] ?? 0) + 1;
   }
   return products;
 }
