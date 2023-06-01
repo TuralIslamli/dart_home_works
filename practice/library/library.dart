@@ -15,9 +15,11 @@ class Library {
         .where((element) =>
             element.title.toLowerCase().contains(searchText.toLowerCase()))
         .toList();
-    for (var element in searchResult) {
-      displayBook(element);
-    }
+    searchResult.length != 0
+        ? searchResult.forEach((element) {
+            displayBook(element);
+          })
+        : print('Not found');
   }
 
   void displayBooks() {
