@@ -1,15 +1,18 @@
 import 'classes.dart';
 
 void main() {
-  Car tesla = Car(
-      isElectraCar: true,
-      type: "sport",
-      color: "red",
-      model: "Tesla",
-      wheelsCount: 4);
-  tesla.getStart();
+  Employee firstEmployee =
+      Employee(position: "seller", name: "Jack", email: "jack@gmail.com");
+  firstEmployee.displayInfo();
 
-  Byke mercedes =
-      Byke(color: "red", model: "mercedes", wheelsCount: 2, horsePowers: 125);
-  mercedes.getStart();
+  Employee secondEmployee =
+      Employee(position: "cashier", name: "John", email: "john@gmail.com");
+  secondEmployee.displayInfo();
+
+  Manager manager = Manager(name: "Jaime", email: "jaime@gmail.com");
+  manager.displayInfo();
+
+  manager.addEmployee(firstEmployee);
+  manager.addEmployee(secondEmployee);
+  manager.displayEmployeeList();
 }
