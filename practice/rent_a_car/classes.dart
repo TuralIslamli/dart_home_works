@@ -1,4 +1,3 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 enum VehicleType { Commercial, Coupe, Hatchback, Sedan, Sport, SUV, Motorcycle }
 
 mixin Discountable {
@@ -9,8 +8,8 @@ Discounted price: ${price * (1 - discount / 100)}\$''');
 }
 
 abstract class Rentable {
-  rent();
-  returnVehicle();
+  void rent();
+  void returnVehicle();
 }
 
 class Vehicle implements Rentable {
